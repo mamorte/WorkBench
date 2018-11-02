@@ -1,29 +1,18 @@
-import {
-  Observable,
-  timer,
-  of,
-  from,
-  concat,
-  fromEvent,
-  merge,
-  throwError,
-  Subject,
-  interval
-} from "rxjs";
+import { Observable, timer, of, from, concat, fromEvent, merge, throwError, Subject, interval } from "rxjs";
 import { ajax } from "rxjs/ajax";
 import {
-  mergeMap,
-  filter,
-  tap,
-  catchError,
-  take,
-  multicast,
-  refCount,
-  publish,
-  share,
-  publishLast,
-  publishBehavior,
-  publishReplay
+    mergeMap,
+    filter,
+    tap,
+    catchError,
+    take,
+    multicast,
+    refCount,
+    publish,
+    share,
+    publishLast,
+    publishBehavior,
+    publishReplay
 } from "rxjs/operators";
 import { allBooks, allReaders } from "./data";
 
@@ -31,7 +20,7 @@ console.log("testing123456789");
 
 const elem = document.getElementById("test123");
 if (elem) {
-  elem.innerHTML = "Hello World";
+    elem.innerHTML = "Hello World";
 }
 
 // RxJs
@@ -39,24 +28,20 @@ if (elem) {
 //#region OBSERVABLES
 
 let allBooksObservable$ = new Observable(subscriber => {
-  if (document.title != "RxBoooks") {
-    subscriber.error("Incorrect page title");
-  }
+    if (document.title != "RxBoooks") {
+        subscriber.error("Incorrect page title");
+    }
 
-  for (let book of allBooks) {
-    subscriber.next(book);
-  }
+    for (let book of allBooks) {
+        subscriber.next(book);
+    }
 
-  setTimeout(() => subscriber.complete(), 2000);
+    setTimeout(() => subscriber.complete(), 2000);
 
-  return () => console.log("Teardown");
+    return () => console.log("Teardown");
 });
 
-allBooksObservable$.subscribe(
-  book => console.log(book),
-  () => console.log("Error happened"),
-  () => console.log("Completed")
-);
+allBooksObservable$.subscribe(book => console.log(book), () => console.log("Error happened"), () => console.log("Completed"));
 
 /*
 let source1$ = of(true, false, "Hei", 123, "Deg", allReaders[0].name);
