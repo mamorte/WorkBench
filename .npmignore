@@ -1,0 +1,8 @@
+node_modules/
+
+# Ignore source files
+src/
+
+# Ignore test files
+tests.ts
+*.tests.tsx

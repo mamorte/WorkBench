@@ -1,0 +1,5 @@
+node_modules/
+yarn-error.log
+
+# Output files bound for uploading to the CDN and to the Resource Catalog
+/dist
