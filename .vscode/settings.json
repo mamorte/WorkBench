@@ -1,0 +1,25 @@
+{
+    "git.ignoreLimitWarning": true,
+    "git.decorations.enabled": false,
+
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/.DS_Store": true,
+        "**/.gitignore": true,
+        "npm-debug.log": true
+    },
+
+    "editor.quickSuggestions": true,
+    "editor.wordBasedSuggestions": false,
+    "editor.suggestOnTriggerCharacters": true,
+    "editor.insertSpaces": true,
+    "editor.formatOnSave": true,
+    "editor.folding": false,
+
+    "window.zoomLevel": 0,
+    "files.trimTrailingWhitespace": true,
+    "typescript.referencesCodeLens.enabled": true,
+    "typescript.tsdk": "node_modules/typescript/lib"
+}
